@@ -1,0 +1,145 @@
+<html>
+<head>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        //------------------------------------------------------------------------------------>
+        var circleCount = 1;
+        var tileCount = 0;
+        var divCount = 0;
+        //------------------------------------------------------------>
+        function works() {
+//	alert("here we go");
+        }
+        //------------------------------------------------------------------------------ createCircle
+        function createCircle() {
+            var newdiv = document.createElement('div');
+            var circleIdName = 'circle' + circleCount;
+            newdiv.setAttribute('id', circleIdName);
+            var equilateralCircle = Math.floor((Math.random() * 150));
+            newdiv.style.width = equilateralCircle;
+            newdiv.style.height = equilateralCircle;
+            var winWidth = Math.floor(Math.random() * 1500);
+            var winHeight = Math.floor(Math.random() * 1000);
+            newdiv.style.left = Math.floor(Math.random() * winWidth - 50);
+            newdiv.style.top = Math.floor(Math.random() * winHeight - 50);
+            newdiv.style.position = "fixed";
+            newdiv.style.background = "#FFFFFF";
+            newdiv.style.border = "3px solid #000000";
+            newdiv.style.borderRadius = "50%";
+            newdiv.style.zIndex = "-1";
+            document.body.appendChild(newdiv);
+            $('div#circle' + circleCount).animate({
+                        "width": "-=30px",
+                        "height": "-=30px",
+                        "marginLeft": "+=10px",
+                        "marginTop": "+=10px"
+                    }, 'slow')
+                    .animate({
+                        "width": "+=30px",
+                        "height": "+=30px",
+                        "marginLeft": "-=10px",
+                        "marginTop": "-=10px"
+                    }, 'slow')
+            circleCount++;
+        }
+        //-------------------------------------------------------------------------------------------- startPage Tile
+        function startTile() {
+            var startTile = document.createElement('div');
+            var tile = 'tile';
+            startTile.setAttribute('id', 'tile' + tileCount);
+            startTile.className = 'tile';
+            var winWidth = $(window).width();
+            startTile.style.width = winWidth;
+            startTile.style.height = "2000px";
+//	startTile.style.background = "#FFFFFF";
+            startTile.style.border = "5px solid #000000";
+            startTile.style.zIndex = "1000";
+            document.body.appendChild(startTile);
+            tileCount++;
+        }
+        //------------------------------------------------------------------ find XY of page Resize and Aggregate
+        function findXY() {
+            var winWidth = $(window).width();
+            var winHeight = $(window).height();
+            console.log("winWidth = " + winWidth + "winHeight = " + winHeight);
+            console.log($(document).height())
+            console.log($(window).scrollTop())
+            $(".tile").css("width", $(window).width() - 25);
+            if ($(window).scrollTop() > ($(document).height() - 1000)) {
+                startTile();
+                works();
+
+//		$.getScript("tile0.js");
+//		$.getScript("tile1.js");
+//		$("#div0").load().appendChild($.getScript("tile0.js"););
+//		$("#div0").load().appendChild($.getScript("tile1.js"););
+//			$("#tile1").load("tile0.js");s
+//			$("#tile1").load("tile1.js");
+            }
+            ;
+
+        }
+        //---------------------------------------------------------------------------------------------------------------------- time line
+        function execute() {
+            var startFindXY = setInterval(findXY, 100);
+            var startBackgroundCircle = setInterval(createCircle, 100);
+            var killBackgroundCircle = setTimeout(endGenorate, 4200);
+
+            function endGenorate() {
+                clearTimeout(startBackgroundCircle);
+            }
+        }
+        //---------------------------------------------------------------------------------divCreate
+        function divCreate() {
+            var div = document.createElement('div');
+            var newDivId = 'div' + divCount;
+            div.setAttribute('id', newDivId);
+            div.className = "div";
+            var tile0 = document.getElementById("#tile0");
+            document.getElementById("tile0").appendChild(div);
+            divCount++;
+
+        }
+        //---------------------------------------------------------------------------------------------------------------------------------
+        function applyJava() {
+
+//	$('#div0').append("<script type=\"text/javascript\" src=\"tile0.js\"><\/script>");
+//	$('#div0').append("<script type=\"text/javascript\" src=\"tile1.js\"><\/script>");
+
+            $('#div0').html(function () {
+                $.getScript("tile0.js");
+            });
+            $('#div0').html(function () {
+                $.getScript("tile1.js");
+            });
+            $('#div0').html(function () {
+                $.getScript("tile2.js");
+            });
+            $('#div0').html(function () {
+                $.getScript("tile3.js");
+            });
+
+
+//	document.write("<script src='tile0.js'><\/script>");
+//	document.write("<script src='tile0.js'><\/script>");
+
+            /*		var scrpt = document.createElement('script');
+             scrpt.src='tile0.js';
+             document.getElementById("div0").appendChild(scrpt);
+             var scrpt = document.createElement('script');
+             scrpt.src='tile1.js';
+             document.getElementById("div0").appendChild(scrpt);*/
+        }
+        //------------------------------------------------------------------------------------------------ window load
+        window.onload = function () {
+            startTile();
+            execute();
+            divCreate();
+            applyJava();
+        }
+        //---------------------------------------------------------------------------------------------------->
+    </script>
+</head>
+
+</html>

@@ -1,0 +1,26 @@
+
+// SQL Example Query
+
+// DB `GEOPOLITICS`.`DATA_PROBE`
+
+INSERT INTO `GEOPOLITICS`.`DATA_PROBE` (`ID`, `TITLE`, `URL`, `IMG`) VALUES ('', '', '', '');
+
+DELETE FROM `GEOPOLITICS`.`DATA_PROBE` WHERE `ID`=1
+
+INSERT INTO `GEOPOLITICS`.`DATA_PROBE` (`ID`, `TITLE`, `URL`, `IMG`) VALUES ('', 'If Syria and Iraq Become Fractured, So Too Will Tripoli and North Lebanon', 'http://www.huffingtonpost.com/alastair-crooke/syria-iraq-fractured_b_7471540.html', 'http://i.huffpost.com/gen/3011750/images/n-RAMADI-large570.jpg');
+
+// Data Types
+
+// `ID` '', auto_increment; leave blank
+
+// `TITLE`
+// If Syria and Iraq Become Fractured, So Too Will Tripoli and North Lebanon
+
+// `URL`
+// http://www.huffingtonpost.com/alastair-crooke/syria-iraq-fractured_b_7471540.html
+
+// `IMG`
+// http://i.huffpost.com/gen/3011750/images/n-RAMADI-large570.jpg
+
+
+

@@ -1,0 +1,27 @@
+<html>
+<head><title>buildMe</title>
+    <style>
+        .box {
+            position: absolute;
+            height: 98px;
+            width: 98px;
+            background: #CCF;
+            border: 1px solid #AAD;
+            text-align: center;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="demo1_box" class="box handle"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">//---------Drag-Box--------
+$('#demo1_box')
+        .bind('drag', function (event) {
+            $(this).css({
+                top: event.offsetY,
+                left: event.offsetX
+            });
+        });//--------------------------</script>
+</body>
+</html>

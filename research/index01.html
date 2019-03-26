@@ -1,0 +1,667 @@
+<!DOCTYPE html><!--
+          _____            _____                    _____                    _____
+         /\    \          /\    \                  /\    \                  /\    \
+        /::\____\        /::\____\                /::\____\                /::\    \
+       /:::/    /       /:::/    /               /:::/    /               /::::\    \
+      /:::/    /       /:::/    /               /:::/    /               /::::::\    \
+     /:::/    /       /:::/    /               /:::/    /               /:::/\:::\    \
+    /:::/    /       /:::/    /               /:::/____/               /:::/__\:::\    \
+   /:::/    /       /:::/    /               /::::\    \              /::::\   \:::\    \
+  /:::/    /       /:::/    /      _____    /::::::\____\________    /::::::\   \:::\    \
+ /:::/    /       /:::/____/      /\    \  /:::/\:::::::::::\    \  /:::/\:::\   \:::\    \
+/:::/____/       |:::|    /      /::\____\/:::/  |:::::::::::\____\/:::/__\:::\   \:::\____\
+\:::\    \       |:::|____\     /:::/    /\::/   |::|~~~|~~~~~     \:::\   \:::\   \::/    /
+ \:::\    \       \:::\    \   /:::/    /  \/____|::|   |           \:::\   \:::\   \/____/
+  \:::\    \       \:::\    \ /:::/    /         |::|   |            \:::\   \:::\    \
+   \:::\    \       \:::\    /:::/    /          |::|   |             \:::\   \:::\____\
+    \:::\    \       \:::\__/:::/    /           |::|   |              \:::\   \::/    /
+     \:::\    \       \::::::::/    /            |::|   |               \:::\   \/____/
+      \:::\    \       \::::::/    /             |::|   |                \:::\    \
+       \:::\____\       \::::/    /              \::|   |                 \:::\____\
+        \::/    /        \::/____/                \:|   |                  \::/    /
+         \/____/          ~~                       \|___|                   \/____/
+-->
+<head>
+    <title>LukeNet</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <style>
+        body, html {
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        h1 {
+            position: absolute;
+            text-shadow: 2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000;
+            margin-top: 4%;
+            margin-left: 10%;
+            font-weight: 900;
+            font-style: italic;
+            font-family: "Verdana";
+            color: whitesmoke;
+        }
+
+        @media screen and (orientation: landscape) {
+            h1 {
+                font-size: 200%;
+            }
+        }
+
+        @media screen and (orientation: portrait) {
+            h1 {
+                font-size: 200%;
+            }
+        }
+
+        @media screen and (orientation: portrait) and (min-width: 600px) {
+            h1 {
+                font-size: 600%;
+                text-shadow: 5px 5px #000,
+                5px -5px #000,
+                -5px 5px #000,
+                -5px -5px #000;
+            }
+        }
+
+        #List {
+            margin-right: 15%;
+            float: right;
+        }
+
+        h2 {
+            border: 3px solid;
+            border-radius: 5px;
+            text-shadow: 2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000;
+            text-align: left;
+            width: 350%;
+            padding: 5%;
+            margin-top: 20%;
+            font-weight: 900;
+            font-style: italic;
+            font-family: "Verdana";
+            color: whitesmoke;
+            background: rgba(54, 25, 25, .5);
+
+        }
+
+        @media screen and (orientation: landscape) {
+            h2 {
+                font-size: 150%;
+            }
+        }
+
+        @media screen and (orientation: portrait) {
+            h2 {
+                font-size: 150%;
+            }
+        }
+
+        @media screen and (orientation: portrait) and (min-width: 600px) {
+            h2 {
+                font-size: 450%;
+            }
+        }
+
+        h2:hover {
+            background-color: white;
+        }
+
+        hr {
+            color: #FFFFFF;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 10px 1px black;
+        }
+
+        #HR01 {
+            height: 19px;
+            margin-right: 50%;
+            width: 75%;
+        }
+
+        #HR02 {
+            height: 12px;
+            margin-right: 50%;
+            width: 50%;
+        }
+
+        #HR03 {
+            height: 9px;
+            margin-right: 65%;
+            width: 40%;
+        }
+
+        #HR04 {
+            height: 4px;
+            margin-right: 75%;
+            width: 30%;
+        }
+
+        #HR05 {
+            height: 3px;
+            margin-right: 85%;
+            width: 20%;
+        }
+
+        #HR06 {
+            height: 2px;
+            margin-right: 90%;
+            width: 10%;
+        }
+
+        #HR07 {
+            height: 1px;
+            margin-right: 95%;
+            width: 5%;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+<h1>LukeHolman.net</h1>
+
+<hr id="HR01">
+<hr id="HR02">
+<hr id="HR03">
+<hr id="HR04">
+<hr id="HR05">
+<hr id="HR06">
+<hr id="HR07">
+
+<div id="List">
+    <h2 onclick="javascript:location.href='http://www.LukeHolman.net/blog'">&emsp;Blog</h2>
+    <h2 onclick="javascript:location.href='http://www.LukeHolman.net/meetis.php'">&emsp;MEETIS</h2>
+    <h2>&emsp;About</h2>
+</div>
+
+<canvas id="canvas"/>
+</body>
+<script>
+    var myWidth = 0, myHeight = 0;
+    function getSize() {
+        if (typeof( window.innerWidth ) == 'number') {
+            //Non-IE
+            myWidth = window.innerWidth;
+            myHeight = window.innerHeight;
+        } else if (document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight )) {
+            //IE 6+ in 'standards compliant mode'
+            myWidth = document.documentElement.clientWidth;
+            myHeight = document.documentElement.clientHeight;
+        } else if (document.body && ( document.body.clientWidth || document.body.clientHeight )) {
+            //IE 4 compatible
+            myWidth = document.body.clientWidth;
+            myHeight = document.body.clientHeight;
+        }
+        /*        window.alert( 'Width = ' + myWidth );
+         window.alert( 'Height = ' + myHeight );*/
+    }
+    getSize();
+
+    'use strict';
+    (function () {
+        var spacing = 3;
+        var velocity = 4;
+        var radius = function (i) {
+            return {
+                x: 5,
+                y: 5
+            };
+        };
+        var center = function (i, t) {
+            return {
+                x: 0,
+                y: 0,
+                z: spacing * i - velocity * t
+            };
+        };
+        var wobble = function (i) {
+            return {
+                x: Math.cos(i / 12) * 5 + Math.cos(i / 4) * 2,
+                y: Math.sin(i / 9) * 6
+            };
+        };
+        var wobbledepth = 1 / 5;
+        var fovy = 120;
+        var viewport = {x: myWidth, y: myHeight};
+
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var f = 1 / Math.tan(fovy * Math.PI / 180 / 2);
+        var zmax = 30;
+        var heatmap = [[0, 0, 0], [Math.random(), Math.random(), Math.random()]];
+
+        function init() {
+            canvas.width = viewport.x;
+            canvas.height = viewport.y;
+        }
+
+        function project(p, z) {
+            if (typeof z === 'undefined') {
+                z = p.z;
+            }
+            var scale = (z > 1) ? (f / z) : (f);
+            return {
+                x: p.x * scale,
+                y: p.y * scale
+            };
+        }
+
+        function byte(v) {
+            var i = Math.floor(v * 256);
+            if (i < 0) i = 0;
+            if (i > 255) i = 255;
+            var hex = '0123456789abcdef';
+            return hex[i >> 4] + hex[i & 0xf];
+        }
+
+        function heat(v) {
+            return '#' + [0, 1, 2].map(function (i) {
+                        var min = heatmap[0][i];
+                        var max = heatmap[1][i];
+                        return byte(v * (max - min) + min);
+                    }).join('');
+        }
+
+        function color(x, z) {
+            return heat(1 - Math.cos(Math.atan2(x, z)));
+        }
+
+        function wobblevector(i, z) {
+            var wz = z * wobbledepth;
+            if (wz < 0) wz = 0;
+            wz = 1 - Math.exp(-wz);
+            var w = wobble(i);
+            return {
+                x: w.x * wz,
+                y: w.y * wz
+            };
+        }
+
+        function ring(i, t) {
+            var c = center(i, t);
+            var wv = wobblevector(i, c.z);
+            c.x += wv.x;
+            c.y += wv.y;
+            var r = radius(i);
+            var cp = project(c);
+            var rp = project(r, c.z);
+            context.beginPath();
+            context.save();
+            context.scale(viewport.x / 2, viewport.y / 2);
+            context.translate(1, 1);
+            context.scale(viewport.y / viewport.x, 1);
+            context.scale(rp.x, rp.y);
+            context.arc(cp.x, cp.y, 1, 0, Math.PI * 2);
+            context.restore();
+            context.rect(viewport.x, 0, -viewport.x, viewport.y);
+            context.fillStyle = color(r.x, c.z);
+            context.fill();
+        }
+
+        var start = new Date().getTime();
+
+        function render() {
+            var t = (new Date().getTime() - start) / 1000;
+
+            var imin = Math.floor(t * velocity / spacing - 1);
+            var imax = imin + Math.floor(zmax / spacing);
+            context.setTransform(1, 0, 0, 1, 0, 0);
+            context.fillStyle = color(0, zmax);
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            for (var i = imax; i >= imin; i--) {
+                ring(i, t);
+            }
+            if (window.requestAnimationFrame) {
+                window.requestAnimationFrame(render);
+            }
+            else {
+                setTimeout(render, 10);
+            }
+        }
+
+        init();
+        render();
+    })();
+</script>
+</html>
+
+<!--
+
+<head>
+    <title>LukeNet</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <style>
+        body, html {
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        h1 {
+            position: absolute;
+            text-shadow: 2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000;
+            margin-top: 4%;
+            margin-left: 10%;
+            font-weight: 900;
+            font-style: italic;
+            font-family: "Verdana";
+            color: whitesmoke;
+        }
+
+        @media screen and (orientation: landscape) {
+            h1 {
+                font-size: 200%;
+            }
+        }
+
+        @media screen and (orientation: portrait) {
+            h1 {
+                font-size: 200%;
+            }
+        }
+
+        @media screen and (orientation: portrait) and (min-width: 600px) {
+            h1 {
+                font-size: 600%;
+                text-shadow: 5px 5px #000,
+                5px -5px #000,
+                -5px 5px #000,
+                -5px -5px #000;
+            }
+        }
+
+        #List {
+            margin-right: 15%;
+            float: right;
+        }
+
+        h2 {
+            border: 3px solid;
+            border-radius: 5px;
+            text-shadow: 2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000;
+            text-align: left;
+            width: 350%;
+            padding: 5%;
+            margin-top: 20%;
+            font-weight: 900;
+            font-style: italic;
+            font-family: "Verdana";
+            color: whitesmoke;
+        }
+
+        @media screen and (orientation: landscape) {
+            h2 {
+                font-size: 150%;
+            }
+        }
+
+        @media screen and (orientation: portrait) {
+            h2 {
+                font-size: 150%;
+            }
+        }
+
+        @media screen and (orientation: portrait) and (min-width: 600px) {
+            h2 {
+                font-size: 450%;
+            }
+        }
+
+        h2:hover {
+            background-color: white;
+        }
+
+        hr {
+            color: #FFFFFF;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 10px 1px black;
+        }
+
+        #HR01 {
+            height: 19px;
+            margin-right: 50%;
+            width: 75%;
+        }
+
+        #HR02 {
+            height: 12px;
+            margin-right: 50%;
+            width: 50%;
+        }
+
+        #HR03 {
+            height: 9px;
+            margin-right: 65%;
+            width: 40%;
+        }
+
+        #HR04 {
+            height: 4px;
+            margin-right: 75%;
+            width: 30%;
+        }
+
+        #HR05 {
+            height: 3px;
+            margin-right: 85%;
+            width: 20%;
+        }
+
+        #HR06 {
+            height: 2px;
+            margin-right: 90%;
+            width: 10%;
+        }
+
+        #HR07 {
+            height: 1px;
+            margin-right: 95%;
+            width: 5%;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+<h1>LukeHolman.net</h1>
+
+<hr id="HR01">
+<hr id="HR02">
+<hr id="HR03">
+<hr id="HR04">
+<hr id="HR05">
+<hr id="HR06">
+<hr id="HR07">
+
+<div id="List">
+    <h2 onclick="javascript:location.href='http://www.LukeHolman.net/blog'">&emsp;Blog</h2>
+    <h2 onclick="javascript:location.href='http://www.LukeHolman.net/meetis.php'">&emsp;MEETIS</h2>
+    <h2>&emsp;About</h2>
+</div>
+
+<canvas id="canvas"/>
+</body>
+<script>
+    var myWidth = 0, myHeight = 0;
+    function getSize() {
+        if (typeof( window.innerWidth ) == 'number') {
+            //Non-IE
+            myWidth = window.innerWidth;
+            myHeight = window.innerHeight;
+        } else if (document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight )) {
+            //IE 6+ in 'standards compliant mode'
+            myWidth = document.documentElement.clientWidth;
+            myHeight = document.documentElement.clientHeight;
+        } else if (document.body && ( document.body.clientWidth || document.body.clientHeight )) {
+            //IE 4 compatible
+            myWidth = document.body.clientWidth;
+            myHeight = document.body.clientHeight;
+        }
+        /*        window.alert( 'Width = ' + myWidth );
+         window.alert( 'Height = ' + myHeight );*/
+    }
+    getSize();
+
+    'use strict';
+    (function () {
+        var spacing = 3;
+        var velocity = 4;
+        var radius = function (i) {
+            return {
+                x: 5,
+                y: 5
+            };
+        };
+        var center = function (i, t) {
+            return {
+                x: 0,
+                y: 0,
+                z: spacing * i - velocity * t
+            };
+        };
+        var wobble = function (i) {
+            return {
+                x: Math.cos(i / 12) * 5 + Math.cos(i / 4) * 2,
+                y: Math.sin(i / 9) * 6
+            };
+        };
+        var wobbledepth = 1 / 5;
+        var fovy = 120;
+        var viewport = {x: myWidth, y: myHeight};
+
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var f = 1 / Math.tan(fovy * Math.PI / 180 / 2);
+        var zmax = 30;
+        var heatmap = [[0, 0, 0], [Math.random(), Math.random(), Math.random()]];
+
+        function init() {
+            canvas.width = viewport.x;
+            canvas.height = viewport.y;
+        }
+
+        function project(p, z) {
+            if (typeof z === 'undefined') {
+                z = p.z;
+            }
+            var scale = (z > 1) ? (f / z) : (f);
+            return {
+                x: p.x * scale,
+                y: p.y * scale
+            };
+        }
+
+        function byte(v) {
+            var i = Math.floor(v * 256);
+            if (i < 0) i = 0;
+            if (i > 255) i = 255;
+            var hex = '0123456789abcdef';
+            return hex[i >> 4] + hex[i & 0xf];
+        }
+
+        function heat(v) {
+            return '#' + [0, 1, 2].map(function (i) {
+                        var min = heatmap[0][i];
+                        var max = heatmap[1][i];
+                        return byte(v * (max - min) + min);
+                    }).join('');
+        }
+
+        function color(x, z) {
+            return heat(1 - Math.cos(Math.atan2(x, z)));
+        }
+
+        function wobblevector(i, z) {
+            var wz = z * wobbledepth;
+            if (wz < 0) wz = 0;
+            wz = 1 - Math.exp(-wz);
+            var w = wobble(i);
+            return {
+                x: w.x * wz,
+                y: w.y * wz
+            };
+        }
+
+        function ring(i, t) {
+            var c = center(i, t);
+            var wv = wobblevector(i, c.z);
+            c.x += wv.x;
+            c.y += wv.y;
+            var r = radius(i);
+            var cp = project(c);
+            var rp = project(r, c.z);
+            context.beginPath();
+            context.save();
+            context.scale(viewport.x / 2, viewport.y / 2);
+            context.translate(1, 1);
+            context.scale(viewport.y / viewport.x, 1);
+            context.scale(rp.x, rp.y);
+            context.arc(cp.x, cp.y, 1, 0, Math.PI * 2);
+            context.restore();
+            context.rect(viewport.x, 0, -viewport.x, viewport.y);
+            context.fillStyle = color(r.x, c.z);
+            context.fill();
+        }
+
+        var start = new Date().getTime();
+
+        function render() {
+            var t = (new Date().getTime() - start) / 1000;
+
+            var imin = Math.floor(t * velocity / spacing - 1);
+            var imax = imin + Math.floor(zmax / spacing);
+            context.setTransform(1, 0, 0, 1, 0, 0);
+            context.fillStyle = color(0, zmax);
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            for (var i = imax; i >= imin; i--) {
+                ring(i, t);
+            }
+            if (window.requestAnimationFrame) {
+                window.requestAnimationFrame(render);
+            }
+            else {
+                setTimeout(render, 10);
+            }
+        }
+
+        init();
+        render();
+    })();
+</script>
+</html>
+-->

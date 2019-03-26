@@ -1,0 +1,35 @@
+<!DOCTYPE html><html><head>
+
+    <!-- custom scrollbar stylesheet -->
+    <link rel="stylesheet" href="jquery.mCustomScrollbar.css">
+
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head><body>
+
+    <!-- custom scrollbar plugin -->
+    <!-- http://manos.malihu.gr/jquery-custom-content-scroller/ -->
+    <script src="jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script>
+
+            var theIframe = document.createElement("iframe");
+            theIframe.setAttribute('id', 'WordpressBlog');
+            theIframe.style.position = "absolute";
+            theIframe.src = '/blog';
+            document.body.appendChild(theIframe);
+/*            $("body").mCustomScrollbar({
+                theme: "inset-3",
+                alwaysShowScrollbar: 2
+            });*/
+            function ResizeWordpressWindow() {
+                document.getElementById("WordpressBlog").width = $(window).width();
+                document.getElementById("WordpressBlog").height = $(window).height();
+            }
+            var StartInterface = setInterval(ResizeWordpressWindow, 1000);
+    </script>
+
+
+
+</body></html>
