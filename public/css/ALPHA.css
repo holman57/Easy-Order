@@ -1,0 +1,177 @@
+@charset "utf-8";
+/* CSS Document */
+
+#mCSB_1_scrollbar_vertical {
+    width: 10%;
+}
+
+.mCSB_dragger_onDrag {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mCSB_dragger_bar {
+    display: none;
+}
+
+.mCS-inset-3.mCSB_scrollTools .mCSB_dragger {
+    width: 100%;
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.mCS-inset-3.mCSB_scrollTools .mCSB_dragger:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.mCS-inset-3.mCSB_scrollTools .mCSB_draggerRail {
+    background-color: black;
+}
+
+@media screen and (orientation: portrait) {
+    .IMGdiv {
+        width: 100%;
+        height: 420%;
+        display: block;
+        margin-top: -60%;
+    }
+
+    .TITLEdiv {
+        width: 100%;
+        display: block;
+    }
+
+    .tile {
+        height: 15%;
+        overflow: hidden;
+        background-color: white;
+    }
+
+    .IMAGE {
+        opacity: 0.5;
+        width: 100%;
+        height: 100%;
+    }
+
+    h1 {
+        font-family: Tahoma, Helvetica, Arial, Sans-Serif, serif;
+        text-align: center;
+        font-weight: bold;
+        color: #000000;
+        text-shadow: 0px 2px 3px #555;
+    }
+
+    h2 {
+        transform: translateY(-476%);
+        font-family: Tahoma, Helvetica, Arial, Sans-Serif, serif;
+        text-align: center;
+        color: #222;
+        font-weight: bold;
+        text-shadow: 0px 2px 3px #555;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .IMGdiv {
+        width: 100%;
+        float: right;
+        height: 400%;
+        margin-top: -42%;
+    }
+
+    .TITLEdiv {
+        width: 100%;
+        float: left;
+    }
+
+    .tile {
+        height: 20%;
+        overflow: hidden;
+        background-color: white;
+    }
+
+    .IMAGE {
+        height: 140%;
+        opacity: 0.5;
+        width: 100%;
+        margin-top: -2%;
+    }
+}
+
+h1 {
+    font-family: Tahoma, Helvetica, Arial, Sans-Serif, serif;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 0px 2px 3px #555;
+}
+
+@media screen and (orientation: landscape) {
+    h1 {
+        font-size: 200%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    h1 {
+        font-size: 200%;
+    }
+}
+
+@media screen and (orientation: portrait) and (min-width: 600px) {
+    h1 {
+        font-size: 250%;
+    }
+}
+
+h2 {
+    transform: translateY(-1486%);
+    font-family: Tahoma, Helvetica, Arial, Sans-Serif, serif;
+    text-align: right;
+    color: #000000;
+    font-weight: bold;
+}
+
+body {
+    background-color: black;
+    margin: 0px;
+}
+
+a {
+    font-weight: bold;
+}
+
+#UPSILON {
+    display: none;
+    background-color: #000;
+}
+
+button {
+    width: 30%;
+    height: 50px;
+}
+
+p {
+    width: 80%;
+    overflow: hidden;
+}
+
+#MENU {
+    display: none;
+}
+
+a {
+    text-align: center;
+}
+
+html {
+overflow: scroll;
+overflow-x: hidden;
+}
+::-webkit-scrollbar {
+width: 0px; /* remove scrollbar space /
+background: transparent; / optional: just make scrollbar invisible /
+}
+/ optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+background: #FF0000;
+}

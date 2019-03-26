@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5c96e2f06f45fa66bcd4e65b"},"name":"Grilled Cheese","price":{"$numberInt":"3"},"category":"Lunch","description":"Two pieces of bread smothered in cheese.","picture":"Grilled_Cheese.jpg","position":{"$numberInt":"1"}}
+{"_id":{"$oid":"5c96e43a6f45fa66bcd4e65d"},"name":"Tomato Soup","price":{"$numberInt":"4"},"category":"Lunch","description":"Fresh silky smooth tomato soup.","picture":"Tomato_Soup.jpg","position":{"$numberInt":"2"}}
+{"_id":{"$oid":"5c96e49c6f45fa66bcd4e65e"},"price":{"$numberInt":"5"},"category":"Lunch","description":"Farm raised organic chickens.","picture":"Chicken_Nuggets.jpg","name":"Chicken Nuggets","position":{"$numberInt":"3"}}
+{"_id":{"$oid":"5c96e5216f45fa66bcd4e65f"},"name":"Flatbread Pizza","price":{"$numberInt":"7"},"category":"Dinner","description":"These flatbread pizzas are perfect to make for a quick lunch, easy dinner, and everything in betweeen.","picture":"Flatbread_Pizza.jpg","position":{"$numberInt":"4"}}
+{"_id":{"$oid":"5c96e5826f45fa66bcd4e660"},"name":"Mac & Cheese","price":{"$numberInt":"4"},"category":"Lunch","description":"Creamy and cheesy.","picture":"Mac_&_Cheese.jpg","position":{"$numberInt":"5"}}

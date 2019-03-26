@@ -1,0 +1,363 @@
+<div id="UPSILON">.</div><!doctype html>
+
+<!-- ASSIGN ANGULAR MODULE -->
+<html ng-app="">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+								<title> ORDER </title>
+
+	<!-- GOOGLE FONT -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins%7CQuicksand:500,700" rel="stylesheet">
+	
+	<!-- FONTAWESOME ICONS -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+	<link href="css/materialize.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- JAVASCRIPT -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/FUNCTIONS.js"></script>
+	<script src="js/socket.io.js"></script>
+
+
+	<style>
+		#mCSB_1_container {
+			background: black;
+		}
+		#todo-list { 
+			margin-bottom:30px; 
+		}
+		#todo-form { 
+			margin-bottom:50px; 
+			background: black;
+		}
+		.main {
+		    background: black;
+		}
+		.foot-1 {
+        	display: none
+	    }
+	    .menu-section {
+	        display: none
+	    }
+	    .mm {
+	        display: block;
+	    }
+	    .r-com {
+	        width: 100%;
+	    }
+	    .r2 {
+	        border-bottom: 1px solid #d1d1d1;
+	        border-right: 0px solid #d1d1d1;
+	    }
+	    .r3 {
+	        border-bottom: 1px solid #d1d1d1;
+	        border-right: 0px solid #d1d1d1;
+	    }
+	    .r4 {
+	        border-bottom: 1px solid #d1d1d1;
+	        border-right: 0px solid #d1d1d1;
+	    }
+	    .inn-bod {
+	        width: 100%;
+	        float: right;
+	    }
+	    .inn-detail {
+	        background-size: 0%;
+	        background: none;
+	    }
+	    .inn-com-list-point ul li {
+	        font-size: 14px;
+	        width: 48%;
+	    }
+	    .in-blog h3 {
+	        margin-top: 25px;
+	    }
+	    .log-in-pop-left {
+	        width: 100%;
+	        padding: 7%;
+	    }
+	    .log-in-pop-right {
+	        width: 100%;
+	        padding: 7%;
+	    }
+	    .offer-r {
+	        display: none;
+	    }
+	    .book-form {
+	        margin-top: 0px;
+	    }
+	    .book-title {
+	        padding: 0%;
+	        margin-bottom: 30px;
+	    }
+	    .book-title h2 {
+	        margin-bottom: 10px;
+	    }
+	    .book-title p {
+	        color: #ffffff;
+	    }
+	    .bot-gal {
+	        margin-bottom: 40px;
+	        position: relative;
+	        overflow: hidden;
+	    }
+	    footer h4 {
+	        position: relative;
+	        overflow: hidden;
+	        width: 100%;
+	        padding-top: 20px;
+	    }
+	    .foot-sec2 {
+	        margin-top: 0px;
+	    }
+	    .inn-banner {
+	        margin-top: 57px;
+	        padding: 35px 20px;
+	    }
+	    .db-left {
+	        width: 100%;
+	    }
+	    .db-cent {
+	        width: 100%;
+	    }
+	    .db-righ {
+	        width: 100%;
+	        float: right;
+	    }
+	    .db-left-2 {
+	        padding: 20px;
+	    }
+	    .db-left-2 ul li {
+	        width: 25%;
+	    }
+	    .db-left-2 ul li:nth-child(2) {
+	        border-right: 1px solid #f7485f;
+	    }
+	    .db-left-2 ul li:nth-child(6) {
+	        border-right: 1px solid #f7485f;
+	        border-bottom: 0px solid #f7485f;
+	    }
+	    .db-left-2 ul li:nth-child(5) {
+	        border-bottom: 0px solid #f7485f;
+	    }
+	    .dashboard {
+	        margin-top: 56px;
+	    }
+	    .n2-event {
+	        margin-bottom: 30px;
+	    }
+	    .mm-logo a img {
+	        padding: 12px 8px 4px 8px;
+	    }
+	    .about-right {
+	        margin-top: 40px;
+	    }
+	    .new-con {
+	        margin-top: 30px;
+	    }
+	    .re-room-list-2 h4 {
+	        margin-top: 20px;
+	    }
+	    .re-room-list-3 span {
+	        display: inline-block;
+	        margin-right: 15px;
+	    }
+	    .events h3 {
+	        margin-top: 20px;
+	        margin-bottom: 10px;
+	    }
+	    .hp-ov-fac img {
+	        margin-bottom: 35px;
+	    }
+	    .hp-view {
+	        height: 450px;
+	    }
+		.hp-right-com {
+			margin-bottom: 0px;
+		}	
+		.hp-call{
+			margin-bottom:30px;
+		}
+		.hp-book{
+			margin-bottom:30px;
+		}
+		.log-in-pop-left ul {
+			display: none;
+		}
+		.log-in-pop-left h4{
+			display:none;
+		}
+		.last-sec-spa {
+			margin-bottom: 100px;
+		}
+		.home-bod-2 ul li {
+        width: 46%;
+	    }
+	    .home-bod-2 ul li a {
+	        width: initial;
+	    }
+	    .inn-com-list-point ul li {
+	        font-size: 16px;
+	        width: 100%;
+	    }
+	    .res-menu img {
+	        float: inherit;
+	        display: block;
+	    }
+	    .res-menu h3 span {
+	        float: initial;
+	        display: inline-block;
+	        margin: 15px 0px;
+	    }
+	    .res-menu h3 {
+	        margin-top: 12px;
+	    }
+	    .log-in-pop {
+	        width: 90%;
+	    }
+	    .hp-review-left {
+	        width: 100%;
+	        padding-right: 0px;
+	        border-right: 0px solid #6b7f8a;
+	    }
+	    .hp-review-right {
+	        width: 100%;
+	        padding: 25px 0px 2px 0px;
+	    }
+	    .lr-user-wr-con {
+	        width: 85%;
+	    }
+	    .hp-view {
+	        height: 250px;
+	    }
+		.hp-book-in ul li {
+			width: 100%;
+		}	
+		.hp-book-in ul li a {
+			display: block;
+		}	
+
+		body > div.hom-footer-section > div {
+			width: 100%;
+		}
+
+		body > div.hom-footer-section > div > div > div {
+			  margin: auto;
+			  width: 100%;
+			  padding: 10px;
+		}
+
+		.foot-3 a {
+			width: 49%;
+			padding: 10px;
+		}
+
+
+
+	</style>
+
+	<link rel="stylesheet" type="text/css" href="css/ALPHA.css">
+
+	<style type="text/css">
+
+	.main {
+		height: 80px;
+	}
+	#mCSB_1 {
+		top: 72px;
+	}
+
+	</style>
+
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+
+	<!-- HEADER -->
+	<section>
+		<div class="mm">
+			<div class="mm-inn">
+				<div class="mm-logo">
+					<a href="index.html"><img src="images/logo.png" alt="">
+					</a>
+				</div>
+				<div class="mm-icon"><span><i class="fa fa-bars show-menu" aria-hidden="true"></i></span>
+				</div>
+				<div class="mm-menu">
+					<div class="mm-close"><span><i class="fa fa-times hide-menu" aria-hidden="true"></i></span>
+					</div>
+					<ul>
+						<li><a href="index.html">Home - Default</a>
+						</li>
+						<li><a href="index-1.html">Home - Reservation</a>
+						</li>
+						<li><a href="index-2.html">Home - FullSlider</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+<!-- custom scrollbar plugin -->
+<!-- http://manos.malihu.gr/jquery-custom-content-scroller/ -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script>
+    (function ($) {
+        $(window).load(function () {
+            $("body").mCustomScrollbar({
+                theme: "inset-3",
+                alwaysShowScrollbar: 2,
+                advanced: {autoScrollOnFocus: "input,textarea,select,button,datalist,keygen,a[tabindex],area,object,[contenteditable='true']"},
+                keyboard: {enable: true},
+                keyboard: {scrollAmount: 30},
+                callbacks: {
+                    onInit: function () {
+                        console.log("system good");
+                    },
+                    //	onTotalScrollOffset: 100,
+                    onTotalScroll: function () {
+                        timeline();
+                        console.log("END LIST");
+                    }
+                }
+            });
+            // Init first timeline
+            timeline();
+        });
+    })(jQuery);
+
+</script>
+
+		<!--
+	<div class="hom-footer-section">
+		<div class="container">
+			<div class="row">
+
+				<div class="foot-com foot-3">
+					<a class="waves-effect waves-light" style="font-size: 22px;padding: 7px;float: left;text-align-last: center;    background: #3686f4a3;" href="order.html">Cart&nbsp;<img src="cart.png" width="42" height="42" alt=""></a> 
+					<a class="waves-effect waves-light" style="font-size: 22px;padding: 7px;float: right;text-align-last: center;background: #ff3c3ca1;" href="order.html">Checkout<img src="images/icon/h3.png" width="42" height="42" alt=""></a> </div>
+			</div>
+		</div>
+	</div>
+	
+FOOTER FIXED SECTION-->
+
+
+</body>
+</html>

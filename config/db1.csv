@@ -1,0 +1,6 @@
+_id,name,price,category,description,picture,position
+ObjectId("5c96e2f06f45fa66bcd4e65b"),Grilled Cheese,3,Lunch,Two pieces of bread smothered in cheese.,Grilled_Cheese.jpg,1
+ObjectId("5c96e43a6f45fa66bcd4e65d"),Tomato Soup,4,Lunch,Fresh silky smooth tomato soup.,Tomato_Soup.jpg,2
+ObjectId("5c96e49c6f45fa66bcd4e65e"),Chicken Nuggets,5,Lunch,Farm raised organic chickens.,Chicken_Nuggets.jpg,3
+ObjectId("5c96e5216f45fa66bcd4e65f"),Flatbread Pizza,7,Dinner,These flatbread pizzas are perfect to make for a quick lunch, easy dinner, and everything in betweeen.,Flatbread_Pizza.jpg,4
+ObjectId("5c96e5826f45fa66bcd4e660"),Mac & Cheese,4,Lunch,Creamy and cheesy.,Mac_&_Cheese.jpg,5
